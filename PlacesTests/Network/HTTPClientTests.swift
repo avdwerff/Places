@@ -9,9 +9,6 @@ import Testing
 import Foundation
 @testable import Places
 
-// MARK: - HTTPClient Tests
-
-// needs to be serialized because of MockURLProtocol
 @Suite("HTTPClient")
 struct HTTPClientTests {
     

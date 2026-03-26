@@ -13,6 +13,7 @@ nonisolated struct Endpoint: Sendable {
     let headers: [String: String]
     let queryItems: [URLQueryItem]
     let timeoutInterval: TimeInterval
+    // Extend with `body: (any Encodable & Sendable)?` for body param requests..
     
     init(
         url: String,
