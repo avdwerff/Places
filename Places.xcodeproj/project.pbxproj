@@ -29,9 +29,22 @@
 		499120C72F72CEF400889FFA /* PlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		496006992F75D72C00557A31 /* Exceptions for "Places" folder in "Places" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 499120AF2F72CEF200889FFA /* Places */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		499120B22F72CEF300889FFA /* Places */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				496006992F75D72C00557A31 /* Exceptions for "Places" folder in "Places" target */,
+			);
 			path = Places;
 			sourceTree = "<group>";
 		};
@@ -400,6 +413,7 @@
 				DEVELOPMENT_TEAM = RJW3S4HJK5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Places/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Places;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -439,6 +453,7 @@
 				DEVELOPMENT_TEAM = RJW3S4HJK5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Places/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Places;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
