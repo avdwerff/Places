@@ -52,3 +52,25 @@ nonisolated struct Location: Codable, Equatable, Sendable, CustomStringConvertib
         && lhs.coordinate.longitude == rhs.coordinate.longitude
     }
 }
+
+
+extension Location {
+    var coordinateDescription: String {
+        "\(coordinate.latitude), \(coordinate.longitude)"
+    }
+    
+    var accessibilityDescription: String {
+        if let name {
+            return "\(name), latitude \(coordinate.latitude), longitude \(coordinate.longitude)"
+        }
+        return "Latitude \(coordinate.latitude), longitude \(coordinate.longitude)"
+    }
+}
+
+extension Location: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(coordinate.latitude)
+        hasher.combine(coordinate.longitude)
+        hasher.combine(name)
+    }
+}

@@ -7,12 +7,11 @@
 
 import Foundation
 
-
-final class HTTPClient: HTTPClientProtocol, Sendable {
+nonisolated final class HTTPClient: HTTPClientProtocol, Sendable {
     
     private let session: any NetworkSession
     
-    nonisolated init(session: any NetworkSession = URLSession.shared) {
+    init(session: any NetworkSession = URLSession.shared) {
         self.session = session
     }
 
