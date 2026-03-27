@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		491EA34D2F7700F800B6BF48 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 491EA34C2F7700F200B6BF48 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		499120BE2F72CEF400889FFA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		491EA34C2F7700F200B6BF48 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		499120B02F72CEF200889FFA /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499120BD2F72CEF400889FFA /* PlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		499120C72F72CEF400889FFA /* PlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +93,7 @@
 		499120A72F72CEF200889FFA = {
 			isa = PBXGroup;
 			children = (
+				491EA34C2F7700F200B6BF48 /* README.md */,
 				499120B22F72CEF300889FFA /* Places */,
 				499120C02F72CEF400889FFA /* PlacesTests */,
 				499120CA2F72CEF400889FFA /* PlacesUITests */,
@@ -225,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491EA34D2F7700F800B6BF48 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@ import Foundation
 import Observation
 
 @Observable
-final class CustomLocationViewModel: CustomLocationViewModeling {
+final class CustomLocationViewModel {
     
     private let deepLinkService: any DeepLinkServiceProtocol
     

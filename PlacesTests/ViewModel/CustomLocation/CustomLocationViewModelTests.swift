@@ -9,11 +9,6 @@ import Testing
 import Foundation
 @testable import Places
 
-// MARK: - Mock
-
-
-// MARK: - Tests
-
 @Suite("CustomLocationViewModel")
 @MainActor struct CustomLocationViewModelTests {
     

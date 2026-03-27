@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 @Observable
-final class LocationListViewModel: LocationListViewModeling {
+final class LocationListViewModel {
     
     private(set) var state: ViewState<[Location]> = .idle
     
@@ -20,7 +20,7 @@ final class LocationListViewModel: LocationListViewModeling {
     var customLatitude = ""
     var customLongitude = ""
     
-    let navigationTitle = "Places"
+    var navigationTitle = "Places"
     let addButtonAccessibilityLabel = "Add custom location"
     let addButtonAccessibilityHint = "Opens a form to enter coordinates"
     let loadingMessage = "Loading locations…"
