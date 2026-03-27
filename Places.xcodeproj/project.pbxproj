@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		496006992F75D72C00557A31 /* Exceptions for "Places" folder in "Places" target */ = {
+		491EA34B2F77008400B6BF48 /* Exceptions for "Places" folder in "Places" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -43,7 +43,7 @@
 		499120B22F72CEF300889FFA /* Places */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				496006992F75D72C00557A31 /* Exceptions for "Places" folder in "Places" target */,
+				491EA34B2F77008400B6BF48 /* Exceptions for "Places" folder in "Places" target */,
 			);
 			path = Places;
 			sourceTree = "<group>";
