@@ -6,6 +6,7 @@
 //
 
 nonisolated final class LocationService: LocationServiceProtocol, Sendable {
+    
     private let httpClient: any HTTPClientProtocol
     
     init(httpClient: any HTTPClientProtocol) {
