@@ -90,6 +90,7 @@ struct LocationListViewModelTests {
         await sut.refresh().value
         
         #expect(sut.state == .loaded(Location.mockList))
-        #expect(service.fetchCallCount == 2)
+        #expect(service.fetchCallCount   == 2)
     }
+    
 }

@@ -17,8 +17,7 @@ struct LocationServiceTests {
     private func makeSUT(
         client: MockHTTPClient = MockHTTPClient()
     ) -> LocationService {
-        let service = LocationService(httpClient: client)
-        return service
+        LocationService(httpClient: client)
     }
     
     // MARK: - Success
