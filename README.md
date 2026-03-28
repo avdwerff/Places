@@ -8,15 +8,15 @@ The app uses a straightforward **MVVM** pattern with a `DependencyContainer` for
 
 ### Key decisions
 
-- **Concrete ViewModels in Views** — SwiftUI's `@Bindable` macro requires concrete `@Observable` types; it does not work with protocols or existentials. Protocols are therefore only used where they enable testability through mocking: services, networking, and the URL opener.
-- **`@MainActor` project default** — The project uses Xcode's default actor isolation setting, meaning all types are `@MainActor` unless explicitly marked `nonisolated`. Networking and service layer types are marked `nonisolated` to allow background execution. UI-bound types (ViewModels, deep link service, URL opener) remain on the main actor.
-- **No external dependencies** — The entire networking stack, dependency injection, and deep linking are implemented from scratch using only Foundation and SwiftUI.
+- **Concrete ViewModels in Views**: SwiftUI's `@Bindable` macro requires concrete `@Observable` types; it does not work with protocols or existentials. Protocols are therefore only used where they enable testability through mocking: services, networking, and the URL opener.
+- **`@MainActor` project default**: The project uses Xcode's default actor isolation setting, meaning all types are `@MainActor` unless explicitly marked `nonisolated`. Networking and service layer types are marked `nonisolated` to allow background execution. UI-bound types (ViewModels, deep link service, URL opener) remain on the main actor.
+- **No external dependencies**: The entire networking stack, dependency injection, and deep linking are implemented from scratch using only Foundation and SwiftUI.
 
 ### Project structure
 
 ```
 Places/
-├── Models/
+├── Models/              # nonisolated 
 ├── Networking/          # nonisolated — HTTPClient, services
 ├── ViewModels/          # @MainActor — observable state for views
 ├── Views/
@@ -27,7 +27,7 @@ Places/
 
 ## Features
 
-- Grid view displaying location cards — tapping a card opens the Wikipedia app at that location's coordinates
+- Grid view displaying location cards, tapping a card opens the Wikipedia app at that location's coordinates
 - Pull-to-refresh to reload locations
 - `+` button opens a sheet with coordinate input fields and simple validation for entering a custom location
 - Deep linking via the `wikipedia://` URL scheme (added as a queried URL scheme in Info.plist)
@@ -36,7 +36,7 @@ Places/
 
 ## Testing
 
-Tests are written using the **Swift Testing** framework (`@Test`, `#expect`, `@Suite`) rather than XCTest — partly to explore the newer framework and its more expressive syntax.
+Tests are written using the **Swift Testing** framework (`@Test`, `#expect`, `@Suite`) rather than XCTest, partly to explore the newer framework and its more expressive syntax.
 
 ### Test coverage
 
@@ -46,13 +46,13 @@ Tests are written using the **Swift Testing** framework (`@Test`, `#expect`, `@S
 - **ViewModels** — state transitions, loading, refresh, error recovery, validation
 - **DependencyContainer** — factory methods produce correctly configured instances
 
-View-level testing is not included. The Views are intentionally thin (pure layout, no logic), so ViewModel tests effectively cover all behavior. Snapshot testing could be added for visual regression if needed (SwiftUI).
+View level testing is not included. The Views are intentionally thin (pure layout, no logic), so ViewModel tests effectively cover all behavior. Snapshot testing could be added for visual regression in SwiftUI, with for example TCA Snapshot testing.
 
 ### Mocking strategy
 
 Protocols are defined for services and networking (`HTTPClientProtocol`, `LocationServiceProtocol`, `DeepLinkServiceProtocol`, `URLOpening`, `NetworkSession`). Mock implementations live in the test target.
 
-- Mocks for `@MainActor` types are annotated `@MainActor` — no unsafe workarounds needed.
+- Mocks for `@MainActor` types are annotated `@MainActor`, no unsafe workarounds needed.
 - Mocks for `nonisolated` types that need to cross isolation boundaries use `@unchecked Sendable`. This is acceptable because test mocks are only ever accessed from a single test at a time, never concurrently.
 
 ## Requirements
