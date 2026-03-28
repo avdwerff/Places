@@ -17,6 +17,10 @@ struct LocationListView: View {
         GridItem(.flexible()),
     ]
     
+    private enum Constants {
+        static let gridSpacing: CGFloat = 16
+    }
+    
     init(viewModel: LocationListViewModel) {
         self.viewModel = viewModel
     }
@@ -79,7 +83,7 @@ struct LocationListView: View {
     
     private func locationGrid(_ locations: [Location]) -> some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 16) {
+            LazyVGrid(columns: columns, spacing: Constants.gridSpacing) {
                 ForEach(locations, id: \.self) { location in
                     LocationListItemView(
                         viewModel: container.makeLocationListItemViewModel(for: location)

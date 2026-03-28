@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 extension URLError {
     var toNetworkError: NetworkError {
         switch code {

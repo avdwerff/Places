@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol HTTPClientProtocol: Sendable {
     func perform<T: Decodable & Sendable>(
         _ endpoint: Endpoint

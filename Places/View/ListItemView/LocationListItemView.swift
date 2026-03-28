@@ -9,6 +9,13 @@ import SwiftUI
 
 struct LocationListItemView: View {
     
+    private enum Constants {
+        static let spacing: CGFloat = 8
+        static let titleLineLimit = 2
+        static let minimumScaleFactor: CGFloat = 0.8
+        static let cornerRadius: CGFloat = 12
+    }
+    
     @Bindable var viewModel: LocationListItemViewModel
     
     @ScaledMetric(relativeTo: .body) private var iconSize: CGFloat = 24
@@ -18,12 +25,12 @@ struct LocationListItemView: View {
         Button {
             Task { await viewModel.openInWikipedia() }
         } label: {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: Constants.spacing) {
                 
                 Text(viewModel.locationName)
                     .font(.headline)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.8)
+                    .lineLimit(Constants.titleLineLimit)
+                    .minimumScaleFactor(Constants.minimumScaleFactor)
                 
                 Text(viewModel.coordinateDescription)
                     .font(.caption)
@@ -32,7 +39,7 @@ struct LocationListItemView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(padding)
             .background(.background.secondary)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .combine)

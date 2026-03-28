@@ -10,6 +10,7 @@ import CoreLocation
 
 @Observable
 final class LocationListItemViewModel {
+    
     private let location: Location
     private let deepLinkService: any DeepLinkServiceProtocol
     
